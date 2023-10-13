@@ -201,13 +201,16 @@ inputFieldEl.addEventListener("keyup", function (event) {
 });
 // Logic for Edit button and Edit Date/Input //
 document.addEventListener("click", function (event) {
-    if (event.target && (event.target.id === "edit-btn" || event.target.id === "edit-img")) {
+    if (event.target &&
+        (event.target.id === "edit-btn" ||
+            event.target.id === "edit-img")) {
         const listItem = event.target.closest("li");
         if (listItem) {
             const taskSpan = listItem.querySelector("span");
             const dueDatePara = listItem.querySelector("#dueDateParagraph");
             if (taskSpan) {
                 const taskText = taskSpan.textContent || "";
+                // Create an input field for the task name
                 const editInput = document.createElement("input");
                 editInput.type = "text";
                 editInput.value = taskText;
@@ -216,29 +219,25 @@ document.addEventListener("click", function (event) {
                 editInput.style.textAlign = "center";
                 editInput.style.border = "1px solid #c2c2c2";
                 editInput.style.boxShadow = "1px 1px 4px #9c9c9c";
+                // Create an input field for the due date
                 const editDateInput = document.createElement("input");
-                editDateInput.id = "edit-date";
                 editDateInput.type = "date";
-                if (dueDatePara) {
-                    const dueDateText = dueDatePara.textContent;
-                    const dueDateMatch = dueDateText ? dueDateText.match(/\d{1,2}\.\s\w+,\s\d{4}/) : null;
-                    if (dueDateMatch) {
-                        const dueDateString = dueDateMatch[0];
-                        const dueDateArray = dueDateString.split(' ');
-                        const dueYear = dueDateArray[2];
-                        const dueMonth = dueDateArray[1].slice(0, -1);
-                        const dueDay = dueDateArray[0].slice(0, -1);
-                        editDateInput.value = `${dueYear}-${dueMonth}-${dueDay}`;
-                    }
-                }
+                // Get the existing due date value
+                const dueDateText = (dueDatePara === null || dueDatePara === void 0 ? void 0 : dueDatePara.textContent) || "";
+                const dueDateMatch = dueDateText.match(/\d{4}-\d{2}-\d{2}/);
+                const dueDateValue = dueDateMatch ? dueDateMatch[0] : "";
+                // Set the value of the date input field
+                editDateInput.value = dueDateValue;
+                editDateInput.id = "edit-date";
                 if (taskSpan.parentElement) {
                     taskSpan.parentElement.replaceChild(editInput, taskSpan);
-                    taskSpan.parentElement.appendChild(editDateInput);
+                    listItem.appendChild(editDateInput);
                     editInput.addEventListener("keyup", function (e) {
                         if (e.key === "Enter") {
                             const editedTask = editInput.value.trim();
                             const editedDueDate = editDateInput.value;
-                            if (editedTask !== "") {
+                            // Check if both task and date fields are not empty
+                            if (editedTask !== "" && editedDueDate !== "") {
                                 updateTask(taskText, editedTask, editedDueDate);
                             }
                         }
@@ -259,13 +258,12 @@ function updateTask(oldTask, editedTask, editedDueDate) {
     for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].task === oldTask) {
             tasks[i].task = editedTask;
-            tasks[i].dueDate = "Task due on ".concat(editedDueDate);
+            tasks[i].dueDate = "Task due on " + editedDueDate;
             loadTasks();
             break;
         }
     }
 }
-// Format Date to correct Format //
 // Format Date to correct Format
 function formatDate(date) {
     const day = date.getDate();
@@ -338,7 +336,7 @@ sortDescButton.addEventListener("click", function () {
     tasks.sort((a, b) => {
         const dueDateA = a.dueDate ? new Date(a.dueDate.replace("Task due on ", "")).getTime() : 0;
         const dueDateB = b.dueDate ? new Date(b.dueDate.replace("Task due on ", "")).getTime() : 0;
-        return dueDateB - dueDateA; // Change this line to sort in descending order
+        return dueDateB - dueDateA;
     });
     loadTasks();
     activeSortButton = sortDescButton;

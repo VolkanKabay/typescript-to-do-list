@@ -126,7 +126,7 @@ button {
     margin: 5px;
     position: absolute;
     top: 20px;
-    right: 5px; 
+    right: 5px;
 }
 
 button:hover {
@@ -268,5 +268,5 @@ margin-left: 150px;
     width: 97px;
     margin-right: auto;
     display: flex;
-    margin-right: auto;    
+    margin-right: auto;
   }
