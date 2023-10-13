@@ -1,0 +1,272 @@
+body {
+    background-color: #023e8a;
+    font-family: 'Martian Mono', monospace;
+    display: flex;
+    justify-content: center;
+}
+
+#input-el {
+    flex-grow: 1;
+    max-width: 400px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #3a86ff;
+    box-shadow: 1px 1px 4px #4a4e69;
+    margin-right: 10px;
+    padding: 10px 30px;
+    font-family: 'Martian Mono', monospace;
+    font-weight: 300;
+}
+select {
+    padding:7px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: #3a86ff;
+    color: white;
+    font-family: 'Martian Mono', monospace;
+    box-shadow: 1px 1px 5px black;
+    border: 3px solid #3a86ff;
+    text-align: center;
+}
+select:hover {
+    background-color: #023e8a;
+    border: 3px solid #023e8a;
+cursor:pointer;
+transform: scale(0.99);
+
+}
+h1 {
+    font-size: larger;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px #4a4e69;
+}
+
+#container {
+    background-color: #edede9;
+    max-width: 600px;
+    text-align: center;
+    border: 3px solid #edede9;
+    padding: 20px 20px;
+    border-radius: 15px;
+    margin-top: 10%;
+    box-shadow: 1px 1px 20px black;
+    margin-bottom: 5%;
+    width: 100vh;
+}
+
+#add-btn, #clear-btn {
+    color: #edede9;
+    padding: 7px 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+    max-width: 200px;
+    box-shadow: 1px 1px 3px black;
+    font-family: 'Martian Mono', monospace;
+    font-weight: 300;
+    position: static;
+}
+
+#add-btn {
+    background-color: #3a86ff;
+    border: 3px solid #3a86ff;
+    width: 100px;
+    padding: 5px 30px;
+    font-size: 14px;
+}
+
+#add-btn:hover {
+    background-color: #023e8a;
+    border: 3px solid #023e8a;
+    cursor: pointer;
+    transform: scale(0.99);
+
+}
+
+#clear-btn {
+    background-color: red;
+    border: 1px solid red;
+    margin-top: 7px;
+}
+
+#clear-btn:hover {
+    background-color: darkred;
+    border: 1px solid darkred;
+    cursor: pointer;
+    transform: scale(0.99);
+
+}
+
+ul {
+    list-style: none;
+    text-align: start;
+    margin-top: 20px;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 4px 4px 5px #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+
+button {
+    color: #edede9;
+    background-color: red;
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid darkred;
+    box-shadow: 1px 1px 4px darkred;
+    margin: 5px;
+    position: absolute;
+    top: 20px;
+    right: 5px; 
+}
+
+button:hover {
+    background-color: darkred;
+    cursor: pointer;
+    color: white;
+}
+
+img {
+    height: 19px;
+    width: 16px;
+}
+
+#info-el, #clearinfo-el {
+    font-size: 12px;
+    text-align: start;
+    margin-top: 0;
+    padding: 0;
+    color: red;
+}
+
+#info-el {
+    text-align: center;
+    margin: 5px 0 20px 0;
+    padding-top: 0;
+    margin-left: auto;
+}
+
+#create-date {
+    margin-top: 5px;
+    font-size: 10px;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+#current-date {
+    text-align: end;
+    font-size: 12px;
+    color: black;
+    text-shadow: 1px 1px 1px #4a4e69;
+}
+
+#status-checkbox {
+    transform: scale(1.4);
+}
+
+#edit-btn {
+    background-color: red;
+    border: 1px solid red;
+    color: #edede9;
+    padding: 3px 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px darkred;
+    margin-right: 45px;
+    position: absolute;
+    top: 20px;
+}
+
+#edit-btn:hover {
+    background-color: darkred;
+    cursor: pointer;
+    color: white;
+    border: 1px solid darkred;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+}
+#sort-asc-btn,#sort-desc-btn, #clear-filters-btn, #completed-btn {
+     position: static;
+    font-family: 'Martian Mono', monospace;
+    background-color: #3a86ff;
+    border: 1px solid #3a86ff;
+    box-shadow: 1px 1px 5px black;
+    padding: 0px 5px;
+    margin: 5px;
+    width: 100px;
+   }
+   #sort-desc-btn:hover, #sort-asc-btn:hover, #clear-filters-btn:hover, #completed-btn:hover {
+       background-color: #023e8a;
+       border: 1px solid #023e8a;
+       cursor: pointer;
+       transform: scale(0.99);
+   }
+#edit-btn:active, #clear-btn:active, #add-btn:active, #sort-asc-btn:active, #sort-desc-btn:active, #clear-filters-btn:active, .delete-button:active, #completed-btn:active  {
+    transform: scale(0.95);
+}
+option {
+    text-align: center;
+}
+#date-picker {
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #ccc;
+    width: 200px;
+    background-color: #edede9;
+    box-shadow: 1px 1px 5px black;
+    font-family: 'Martian Mono', monospace;
+}
+[type="date"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  #dueDateParagraph
+ {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    color: #023e8a;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 2px 2px 5px #c4c4c4;
+}
+#edit-date {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 2px 3px;
+    width: 97px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 5px #c4c4c4;
+
+}
+#due-date {
+display: flex;
+font-size: 14px;
+margin-top: 5px;
+margin-left: 150px;
+}
+#dateOfTaskEnd {
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 1px 3px;
+    width: 97px;
+    margin-right: auto;
+    display: flex;
+    margin-right: auto;    
+  }
