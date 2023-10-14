@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List ✅</title>
-    <link href="styles.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="container">
-        <p id="current-date"></p>
-        <h1>To-Do-List</h1>
-        <div class="input-container">
-            <input id="input-el" type="text" placeholder="Task">
-            <button id="add-btn">Add</button>
-                      </div>
-                      <p id="due-date"> Due date:&#160;<input type="date" id="dateOfTaskEnd">  </p>
-        <p id="info-el"></p>
-        <button id="completed-btn">Completed Only</button>
-        <button id="sort-asc-btn">Sort Ascending</button>
-        <button id="sort-desc-btn">Sort Descending</button>
-        <button id="clear-filters-btn">Clear Filters</button>
-        <button id="clear-btn">Clear All</button>
-        <ul id="ul-el">
-        </ul>
-        <p id="clearinfo-el"></p>
+      <p id="current-date"></p>
+      <h1>To-Do-List</h1>
+      <div class="input-container">
+        <input id="input-el" type="text" placeholder="Task" />
+        <button id="add-btn">
+          <span id="add-span">Add</span>
+        </button>
+      </div>
+      <p id="due-date">
+        Due date:&#160;<input type="date" id="dateOfTaskEnd" />
+      </p>
+      <p id="info-el"></p>
+      <button id="completed-btn">Completed Only</button>
+      <button id="sort-asc-btn">Sort Ascending</button>
+      <button id="sort-desc-btn">Sort Descending</button>
+      <button id="clear-filters-btn">Clear Filters</button>
+      <button id="clear-btn">Clear All</button>
+      <ul id="ul-el"></ul>
+      <p id="clearinfo-el"></p>
     </div>
-<script src="index.js" type="module"></script>
-</body>
+    <script src="index.js" type="module"></script>
+  </body>
 </html>
