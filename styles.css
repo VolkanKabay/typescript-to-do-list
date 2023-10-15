@@ -3,6 +3,7 @@ body {
     font-family: 'Martian Mono', monospace;
     display: flex;
     justify-content: center;
+    transition: all 0.3s;
 }
 
 #input-el {
@@ -56,7 +57,7 @@ h1 {
 }
 #clear-btn {
     width: 150px;
-    height: 50px;
+    height: 40px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -68,7 +69,6 @@ h1 {
     box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
     background: #e62222;
     position: static;
-    transition: all 0.3s;
    }
    
    #clear-btn, button span {
@@ -84,7 +84,7 @@ h1 {
    #clear-btn .icon {
     position: absolute;
     border-left: 1px solid #c41b1b;
-    transform: translateX(110px);
+    transform: translateX(105px);
     height: 40px;
     width: 40px;
     display: flex;
@@ -95,10 +95,13 @@ h1 {
    #clear-btn svg {
     width: 15px;
     fill: #eee;
+    width: 20px;
+    height: 12px;
    }
    
    #clear-btn:hover {
     background: darkred;
+    height: 30px;
    }
    
    #clear-btn:hover .text {
@@ -129,10 +132,6 @@ h1 {
     border: none;
     box-shadow: 1px 1px 5px black;
     
-  }
-  
-  #add-btn {
-    transition: all 0.3s;
   }
   
   #add-btn #add-btn__text {
@@ -174,6 +173,7 @@ button {
     position: absolute;
     top: 20px;
     right: 5px;
+    width: 34px;
     background-color: red;
     border: 1px solid red;
     box-shadow: 1px 1px 4px darkred;
@@ -252,7 +252,6 @@ img {
     padding: 0px 5px;
     margin: 5px;
     width: 100px;
-    transition: all 0.3s;
    }
    #sort-desc-btn:hover, #sort-asc-btn:hover, #completed-btn:hover {
        background-color: #023e8a;

@@ -237,8 +237,13 @@ document.addEventListener("click", function (event) {
                             const editedTask = editInput.value.trim();
                             const editedDueDate = editDateInput.value;
                             // Check if both task and date fields are not empty
-                            if (editedTask !== "" && editedDueDate !== "") {
+                            if (editedTask === "" || editedDueDate === "") {
+                                clearInfoParagraph.textContent = "No due date or Input found!";
+                                clearInfoParagraph.style.textAlign = "center";
+                            }
+                            else {
                                 updateTask(taskText, editedTask, editedDueDate);
+                                clearInfoParagraph.textContent = "";
                             }
                         }
                     });
@@ -264,6 +269,7 @@ function updateTask(oldTask, editedTask, editedDueDate) {
         }
     }
 }
+// Format Date to correct Format //
 // Format Date to correct Format
 function formatDate(date) {
     const day = date.getDate();
@@ -336,7 +342,7 @@ sortDescButton.addEventListener("click", function () {
     tasks.sort((a, b) => {
         const dueDateA = a.dueDate ? new Date(a.dueDate.replace("Task due on ", "")).getTime() : 0;
         const dueDateB = b.dueDate ? new Date(b.dueDate.replace("Task due on ", "")).getTime() : 0;
-        return dueDateB - dueDateA;
+        return dueDateB - dueDateA; // Change this line to sort in descending order
     });
     loadTasks();
     activeSortButton = sortDescButton;

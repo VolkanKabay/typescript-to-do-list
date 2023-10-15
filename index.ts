@@ -1,17 +1,17 @@
 // Get Items from HTML doc & create arrays //
 
-const ulEl = document.getElementById("ul-el") as HTMLUListElement;
+const ulEl = document.getElementById("ul-el") as HTMLElement;
 const inputFieldEl = document.getElementById("input-el") as HTMLInputElement;
-const addButton = document.getElementById("add-btn") as HTMLButtonElement;
-const clearButton = document.getElementById("clear-btn") as HTMLButtonElement;
-const infoParagraph = document.getElementById("info-el") as HTMLParagraphElement;
-const clearInfoParagraph = document.getElementById("clearinfo-el") as HTMLParagraphElement;
-const currentDateDay = document.getElementById("current-date") as HTMLParagraphElement;
+const addButton = document.getElementById("add-btn") as HTMLElement;
+const clearButton = document.getElementById("clear-btn") as HTMLElement;
+const infoParagraph = document.getElementById("info-el") as HTMLElement;
+const clearInfoParagraph = document.getElementById("clearinfo-el") as HTMLElement;
+const currentDateDay = document.getElementById("current-date") as HTMLElement;
 const datePicker = document.getElementById("dateOfTaskEnd") as HTMLInputElement;
-const clearFiltersButton = document.getElementById("clear-filters-btn") as HTMLButtonElement;
-const completedButton = document.getElementById("completed-btn") as HTMLButtonElement;
-const sortAscButton = document.getElementById("sort-asc-btn") as HTMLButtonElement;
-const sortDescButton = document.getElementById("sort-desc-btn") as HTMLButtonElement;
+const clearFiltersButton = document.getElementById("clear-filters-btn") as HTMLElement;
+const completedButton = document.getElementById("completed-btn") as HTMLElement;
+const sortAscButton = document.getElementById("sort-asc-btn") as HTMLElement;
+const sortDescButton = document.getElementById("sort-desc-btn") as HTMLElement;
 
 interface Task {
   task: string;
@@ -292,8 +292,13 @@ document.addEventListener("click", function (event) {
               const editedDueDate = editDateInput.value;
 
               // Check if both task and date fields are not empty
-              if (editedTask !== "" && editedDueDate !== "") {
-                updateTask(taskText, editedTask, editedDueDate);
+              if (editedTask === "" || editedDueDate === "") {
+                clearInfoParagraph.textContent = "No due date or Input found!"
+                clearInfoParagraph.style.textAlign = "center"
+                            }
+              else {
+              updateTask(taskText, editedTask, editedDueDate);
+              clearInfoParagraph.textContent = ""
               }
             }
           });
