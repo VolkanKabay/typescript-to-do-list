@@ -18,8 +18,8 @@
       <h1>To-Do-List</h1>
       <div class="input-container">
         <input id="input-el" type="text" placeholder="Task" />
-        <button id="add-btn">
-          <span id="add-span">Add</span>
+        <button type="button" id="add-btn">
+          <span id="add-btn__text">Add Item</span>
         </button>
       </div>
       <p id="due-date">
@@ -30,7 +30,21 @@
       <button id="sort-asc-btn">Sort Ascending</button>
       <button id="sort-desc-btn">Sort Descending</button>
       <button id="clear-filters-btn">Clear Filters</button>
-      <button id="clear-btn">Clear All</button>
+      <button id="clear-btn">
+        <span class="text">Clear All</span
+        ><span class="icon"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"
+            ></path>
+          </svg>
+        </span>
+      </button>
       <ul id="ul-el"></ul>
       <p id="clearinfo-el"></p>
     </div>

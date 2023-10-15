@@ -54,48 +54,96 @@ h1 {
     margin-bottom: 5%;
     width: 100vh;
 }
-
-#add-btn, #clear-btn {
-    color: #edede9;
-    padding: 7px 30px;
-    margin-left: 5px;
-    border-radius: 5px;
-    max-width: 200px;
-    box-shadow: 1px 1px 3px black;
-    font-family: 'Martian Mono', monospace;
-    font-weight: 300;
-    position: static;
-}
-
-#add-btn {
-    background-color: #3a86ff;
-    border: 3px solid #3a86ff;
-    width: 100px;
-    padding: 5px 30px;
-    font-size: 14px;
-}
-
-#add-btn:hover {
-    background-color: #023e8a;
-    border: 3px solid #023e8a;
-    cursor: pointer;
-    transform: scale(0.99);
-
-}
-
 #clear-btn {
-    background-color: red;
-    border: 1px solid red;
-    margin-top: 7px;
-}
-
-#clear-btn:hover {
-    background-color: darkred;
-    border: 1px solid darkred;
+    width: 150px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
-    transform: scale(0.99);
-
-}
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+    position: static;
+    transition: all 0.3s;
+   }
+   
+   #clear-btn, button span {
+    transition: 200ms;
+   }
+   
+   #clear-btn .text {
+    transform: translateX(15px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   #clear-btn .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   #clear-btn svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   #clear-btn:hover {
+    background: darkred;
+   }
+   
+   #clear-btn:hover .text {
+    color: transparent;
+   }
+   
+   #clear-btn:hover .icon {
+    width: 140px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   #clear-btn:focus {
+    outline: none;
+   }
+   
+   #clear-btn:active .icon svg {
+    transform: scale(0.8);
+   }
+#add-btn {
+    position: static;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #3a86ff;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+    
+  }
+  
+  #add-btn {
+    transition: all 0.3s;
+  }
+  
+  #add-btn #add-btn__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  #add-btn:hover {
+    background: #023e8a;
+  }
 
 ul {
     list-style: none;
@@ -118,19 +166,23 @@ li {
 
 button {
     color: #edede9;
-    background-color: red;
+    border-radius: 5px;
+    font-family: 'Martian Mono', monospace;
     padding: 3px 8px;
     border-radius: 5px;
-    border: 1px solid darkred;
-    box-shadow: 1px 1px 4px darkred;
     margin: 5px;
     position: absolute;
     top: 20px;
     right: 5px;
-}
+    background-color: red;
+    border: 1px solid red;
+    box-shadow: 1px 1px 4px darkred;
+    transition: all 0.2s;
+    }
 
 button:hover {
     background-color: darkred;
+    border: 1px solid darkred;
     cursor: pointer;
     color: white;
 }
@@ -200,15 +252,23 @@ img {
     padding: 0px 5px;
     margin: 5px;
     width: 100px;
+    transition: all 0.3s;
    }
-   #sort-desc-btn:hover, #sort-asc-btn:hover, #clear-filters-btn:hover, #completed-btn:hover {
+   #sort-desc-btn:hover, #sort-asc-btn:hover, #completed-btn:hover {
        background-color: #023e8a;
        border: 1px solid #023e8a;
        cursor: pointer;
        transform: scale(0.99);
    }
+   #clear-filters-btn:hover {
+    background-color: darkred;
+    border: 1px solid darkred;
+   }
 #edit-btn:active, #clear-btn:active, #add-btn:active, #sort-asc-btn:active, #sort-desc-btn:active, #clear-filters-btn:active, .delete-button:active, #completed-btn:active  {
     transform: scale(0.95);
+}
+#sprt-desc-btn::after {
+    background-color: #023e8a;
 }
 option {
     text-align: center;
