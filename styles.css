@@ -33,8 +33,8 @@ select {
 select:hover {
     background-color: #023e8a;
     border: 3px solid #023e8a;
-cursor:pointer;
-transform: scale(0.99);
+    cursor:pointer;
+    transform: scale(0.99);
 
 }
 h1 {
@@ -44,7 +44,9 @@ h1 {
 }
 
 #container {
-    background-color: #edede9;
+    background: #C9D6FF;
+    background: -webkit-linear-gradient(to top, #E2E2E2, #C9D6FF); 
+    background: linear-gradient(to bottom, #E2E2E2, #C9D6FF); 
     max-width: 600px;
     text-align: center;
     border: 3px solid #edede9;
@@ -254,10 +256,10 @@ img {
     width: 100px;
    }
    #sort-desc-btn:hover, #sort-asc-btn:hover, #completed-btn:hover {
-       background-color: #023e8a;
-       border: 1px solid #023e8a;
-       cursor: pointer;
-       transform: scale(0.99);
+     background-color: #023e8a;
+     border: 1px solid #023e8a;
+     cursor: pointer;
+     transform: scale(0.99);
    }
    #clear-filters-btn:hover {
     background-color: darkred;
@@ -310,10 +312,10 @@ option {
 
 }
 #due-date {
-display: flex;
-font-size: 14px;
-margin-top: 5px;
-margin-left: 150px;
+    display: flex;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 150px;
 }
 #dateOfTaskEnd {
     border: 1px solid #c4c4c4;
