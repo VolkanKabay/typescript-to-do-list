@@ -269,7 +269,6 @@ function updateTask(oldTask, editedTask, editedDueDate) {
         }
     }
 }
-// Format Date to correct Format //
 // Format Date to correct Format
 function formatDate(date) {
     const day = date.getDate();
@@ -342,7 +341,7 @@ sortDescButton.addEventListener("click", function () {
     tasks.sort((a, b) => {
         const dueDateA = a.dueDate ? new Date(a.dueDate.replace("Task due on ", "")).getTime() : 0;
         const dueDateB = b.dueDate ? new Date(b.dueDate.replace("Task due on ", "")).getTime() : 0;
-        return dueDateB - dueDateA; // Change this line to sort in descending order
+        return dueDateB - dueDateA;
     });
     loadTasks();
     activeSortButton = sortDescButton;
